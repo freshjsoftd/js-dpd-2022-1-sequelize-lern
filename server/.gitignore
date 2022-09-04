@@ -1,0 +1,13 @@
+.vscode/
+# dependencies
+node_modules/
+/.pnp
+.pnp.js
+.prettierrc 
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.prettierrc
+.sequelizerc
