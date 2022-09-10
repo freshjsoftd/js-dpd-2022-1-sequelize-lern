@@ -20,8 +20,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     email: {
       type: DataTypes.STRING,
-      unique: true
+      unique: true,
+      validate: {
+        isEmail: true
+      }
     },
+    birthday: DataTypes.DATEONLY,
     description: DataTypes.TEXT
   }, {
     sequelize,

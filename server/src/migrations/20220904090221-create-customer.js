@@ -16,6 +16,9 @@ module.exports = {
         type: Sequelize.STRING,
         unique: true
       },
+      birthday: {
+        type: Sequelize.DATEONLY
+      },
       description: {
         type: Sequelize.TEXT
       },

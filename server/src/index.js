@@ -6,8 +6,10 @@ const db = require('./models');
 		await db.sequelize.authenticate();
 		console.log('Connection has been established successively');
 	} catch (error) {
-		console.error('Unable to connect to the database:', error);
+		console.error('Unable to connect to the database:', error.message);
 	}
+
+
 
 	/* const firstEmployee = {
 		name: 'Vasya Pupkin',
@@ -72,9 +74,12 @@ console.log(deleteEmpls) */
     console.log(updatedEmpls); */
 		// READ
 		// SELECT name, birthday FROM employees
-		const genres = await db.Genre.findAll({
+		/* const genres = await db.Genre.findAll({
 			raw: true,
-			attributes: {include: [[db.sequelize.fn('count', db.sequelize.col('title')), 'summ']]},
+			attributes: {
+				include: [[db.sequelize.fn('count', db.sequelize.col('title')), 'summ']],
+				exclude: ['createdAt', 'updatedAt']},
+			// attributes: ['title', 'id'],
 			where: {
 				id: {[Op.gt]: 15}
 			},
@@ -82,8 +87,20 @@ console.log(deleteEmpls) */
 			group: ['id']
 
 		});
-		// genres.forEach((item) => console.log(item.dataValues))
-		console.log(genres);
+		console.log(JSON.stringify(genres, null, 2)); */
+		try {
+			const customer = await db.Customer.create({
+			name: 'John Doe',
+			birthday: '1995-01-20',
+			email: 'john.doe@gmail.com',
+		},
+		// {validate: false}
+		)
+		console.log(JSON.stringify(customer, null, 2));
+		} catch (error) {
+			console.log('Something went wrong', error.message);
+		}
+		
 
 
 
