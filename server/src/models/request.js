@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Request.belongsTo(models.Customer)
+      Request.belongsTo(models.Customer, {foreignKey: 'customer_id'});
+      Request.belongsToMany(models.Book, {through: 'Requests_Books'});
     }
   }
   Request.init({
@@ -21,16 +22,16 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
       allowNull: false
     },
-    /* customerId: {
+    customer_id: {
       type: DataTypes.INTEGER,
       allowNull: false
-    }, */
+    },
     description: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'Request',
     tableName: 'Requests',
-    // timestamps: false,
+    timestamps: false,
     underscored: true
   });
   return Request;

@@ -1,4 +1,5 @@
 'use strict';
+const bcrypt = require('bcrypt');
 const {
   Model
 } = require('sequelize');
@@ -11,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Customer.hasMany(models.Request)
+      Customer.hasMany(models.Request, {foreignKey: 'customer_id'})
     }
   }
   Customer.init({
@@ -21,9 +22,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     email: {
       type: DataTypes.STRING,
-      unique: true,
+      // unique: true,
       validate: {
         isEmail: true
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      set(value){
+        this.setDataValue('password', bcrypt.hashSync(value, 7));
       }
     },
     birthday: DataTypes.DATEONLY,
@@ -32,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Customer',
     tableName: 'Customers',
-    // timestamps: false,
+    timestamps: false,
     underscored: true
   });
   return Customer;

@@ -8,7 +8,7 @@ module.exports = {
 		dialect: 'postgres',
 		migrationStorage: 'json',
 		define: {
-			// timestamps: false,
+			timestamps: false,
 			underscored: true,
 		},
 	},

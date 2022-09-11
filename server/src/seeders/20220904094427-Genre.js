@@ -1,14 +1,6 @@
 'use strict';
 const { genres } = require('../constants/library-db-constants')
 
-/* const genres = [];
-for(let i=0; i <10; i++){
-  genres.push({
-        title: `Genre ${i}`,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-    })
-}  */
 module.exports = {
   async up (queryInterface, Sequelize) {
       await queryInterface.bulkInsert('Genres', genres, {});

@@ -12,25 +12,33 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      genreId: {
+      genre_id: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+          model: 'Genres',
+          key: 'id'
+        }
       },
-      shelfId: {
+      shelf_id: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+          model: 'Shelves',
+          key: 'id'
+        }
       },
       description: {
         type: Sequelize.TEXT
       },
-      createdAt: {
+      /* created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
-      }
+      } */
     });
   },
   async down(queryInterface, Sequelize) {

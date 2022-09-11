@@ -1,5 +1,5 @@
 // import express from 'express';
-const {Op} = require('sequelize')
+const { Op } = require('sequelize');
 const db = require('./models');
 
 (async function () {
@@ -11,44 +11,26 @@ const db = require('./models');
 	}
 
 	/* try {
-		await db.sequelize.drop({cascade:true})
+		const biography = await db.Genre.findOne({where:{
+		title: ['Adventures']
+	}});
+	console.log(JSON.stringify(biography, null, 2));
+	console.log(await biography.getBooks({raw: true}));
+
 	} catch (error) {
 		console.log('Something went wrong:', error.message);
 	} */
-
-	/* try {
-		await db.sequelize.sync({alter:true});
-	} catch (error) {
-		console.log('Something went wrong:', error.message);
-	} */
-
-
-		/* const genres = await db.Genre.findAll({
-			raw: true,
-			attributes: {
-				include: [[db.sequelize.fn('count', db.sequelize.col('title')), 'summ']],
-				exclude: ['createdAt', 'updatedAt']},
-			// attributes: ['title', 'id'],
-			where: {
-				id: {[Op.gt]: 15}
-			},
-			order: [['title', 'DESC']],
-			group: ['id']
-
-		});
-		console.log(JSON.stringify(genres, null, 2)); */
-		/* try {
-			const customer = await db.Customer.create({
-			name: 'John Doe',
-			birthday: '1995-01-20',
-			email: 'john.doe@gmail.com',
-		},
-		// {validate: false}
-		)
+	
+	try {
+		const customer = await db.Customer.create({
+			name: 'Mike Tyson',
+			password: 'iron_mike',
+			email: 'iron_mike@gmail.com',
+			birthday: '1966-06-30'
+		})
 		console.log(JSON.stringify(customer, null, 2));
-		} catch (error) {
-			console.log('Something went wrong', error.message);
-		} */
+	} catch (error) {
+		console.log('Something went wrong:', error.message);
+	}
 	
 })();
-

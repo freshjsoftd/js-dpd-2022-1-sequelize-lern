@@ -6,5 +6,6 @@
   "20220904091326-create-request.js",
   "20220904091910-create-book.js",
   "20220911083144-create-athors-books.js",
-  "20220911084043-create-requests-books.js"
+  "20220911084043-create-requests-books.js",
+  "20220911103805-add-password-customer.js"
 ]

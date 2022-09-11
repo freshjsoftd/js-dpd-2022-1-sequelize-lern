@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Genre.hasMany(models.Book, {foreignKey: 'genre_numb'})
+      Genre.hasMany(models.Book, {foreignKey: 'genre_id'})
     }
   }
   Genre.init({
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Genre',
     tableName: 'Genres',
-    // timestamps: false,
+    timestamps: false,
     underscored: true
   });
   return Genre;

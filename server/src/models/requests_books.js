@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      
     }
   }
   Requests_Books.init({
@@ -25,6 +26,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Requests_Books',
+    timestamps: false,
+    underscored: true
   });
   return Requests_Books;
 };

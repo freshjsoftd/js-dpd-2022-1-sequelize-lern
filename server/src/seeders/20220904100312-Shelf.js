@@ -5,8 +5,6 @@ const shelves = [];
 for(let i=0; i <20; i++){
   shelves.push({
         code: `Code # ${i+1}`,
-        created_at: new Date(),
-        updated_at: new Date(),
     })
 } 
 module.exports = {
