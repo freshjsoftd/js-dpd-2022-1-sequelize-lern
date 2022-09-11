@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Shelf.hasMany(models.Book)
     }
   }
   Shelf.init({
@@ -22,6 +23,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Shelf',
+    tableName: 'Shelves',
+    // timestamps: false,
+    underscored: true
   });
   return Shelf;
 };

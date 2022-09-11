@@ -5,5 +5,6 @@
   "20220904090619-create-author.js",
   "20220904091326-create-request.js",
   "20220904091910-create-book.js",
-  "20220910084139-add-customer-birthday.js"
+  "20220911083144-create-athors-books.js",
+  "20220911084043-create-requests-books.js"
 ]

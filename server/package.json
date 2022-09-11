@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "dev": "nodemon --exec babel-node ./src/index.js",
     "mig": "npx sequelize-cli db:migrate",
     "migun": "npx sequelize-cli db:migrate:undo",
     "miguna": "npx sequelize-cli db:migrate:undo:all"
@@ -18,6 +20,9 @@
     "sequelize": "^6.21.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.0",
+    "@babel/node": "^7.18.10",
+    "@babel/preset-env": "^7.19.0",
     "nodemon": "^2.0.19",
     "sequelize-cli": "^6.4.1"
   }

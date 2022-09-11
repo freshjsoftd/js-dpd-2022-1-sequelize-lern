@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Customer.hasMany(models.Request)
     }
   }
   Customer.init({
@@ -30,6 +31,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Customer',
+    tableName: 'Customers',
+    // timestamps: false,
+    underscored: true
   });
   return Customer;
 };
