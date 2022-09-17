@@ -22,18 +22,24 @@ module.exports = (sequelize, DataTypes) => {
     },
     email: {
       type: DataTypes.STRING,
-      // unique: true,
+      unique: true,
       validate: {
         isEmail: true
       }
     },
     password: {
       type: DataTypes.STRING,
+      unique: true,
       set(value){
         this.setDataValue('password', bcrypt.hashSync(value, 7));
       }
     },
-    birthday: DataTypes.DATEONLY,
+    birthday: {
+      type: DataTypes.DATEONLY,
+      validate: {
+        isBefore: DataTypes.NOW
+      }
+    },
     description: DataTypes.TEXT
   }, {
     sequelize,
