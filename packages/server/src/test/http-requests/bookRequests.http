@@ -7,5 +7,39 @@ POST http://localhost:5000/api/books HTTP/1.1
 content-type: application/json
 
 {
-
+  "title": "Silmarillion",
+  "description": "Tolkien's book",
+  "genre_id": 48,
+  "shelf_id": 85
 }
+
+###
+
+PUT http://localhost:5000/api/books HTTP/1.1
+content-type: application/json
+
+{
+  "id": 70,
+  "title": "Alica in the wanderworld",
+  "description": "Lewis Carrol",
+  "genre_id": 48,
+  "shelf_id": 85
+}
+
+###
+
+PATCH http://localhost:5000/api/books/50 HTTP/1.1
+content-type: application/json
+
+{
+  "title": "Tom Soyer",
+  "description": "Mark Twain's book",
+  "genre_id": 54,
+  "shelf_id": 88
+}
+
+###
+
+DELETE http://localhost:5000/api/books/52 HTTP/1.1
+content-type: application/json
+

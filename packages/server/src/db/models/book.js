@@ -11,7 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Book.belongsTo(models.Genre, {foreignKey: 'genre_id'});
+      Book.belongsTo(models.Genre, {
+        foreignKey: 'genre_id',
+      onDelete: 'CASCADE',});
       Book.belongsTo(models.Shelf, {foreignKey: 'shelf_id'});
       Book.belongsToMany(models.Author, {through: 'Athors_Books'})
       Book.belongsToMany(models.Request, {through: 'Requests_Books'})
@@ -24,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     genre_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      // allowNull: false
     },
     shelf_id: {
       type: DataTypes.INTEGER,
