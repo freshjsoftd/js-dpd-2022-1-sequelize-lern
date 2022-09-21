@@ -1,5 +1,5 @@
 'use strict';
-const { genres } = require('../constants/library-db-constants')
+const { genres } = require('../../constants/library-db-constants')
 
 module.exports = {
   async up (queryInterface, Sequelize) {

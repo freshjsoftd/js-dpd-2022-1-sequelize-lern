@@ -14,19 +14,23 @@ module.exports = {
       },
       genre_id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        // allowNull: false,
         references: {
           model: 'Genres',
           key: 'id'
-        }
+        },
+        onDelete: 'SET NULL',
+        onUpdate: 'CASCADE'
       },
       shelf_id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        // allowNull: false,
         references: {
           model: 'Shelves',
           key: 'id'
-        }
+        },
+        onDelete: 'SET NULL',
+        onUpdate: 'CASCADE'
       },
       description: {
         type: Sequelize.TEXT

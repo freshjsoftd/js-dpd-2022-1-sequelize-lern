@@ -7,10 +7,10 @@ POST http://localhost:5000/api/books HTTP/1.1
 content-type: application/json
 
 {
-  "title": "Silmarillion",
-  "description": "Tolkien's book",
-  "genre_id": 48,
-  "shelf_id": 85
+  "title": "Voynich Manuscript",
+  "description": "The most mysterious book in the whole world",
+  "genre_id": 11,
+  "shelf_id": 2
 }
 
 ###

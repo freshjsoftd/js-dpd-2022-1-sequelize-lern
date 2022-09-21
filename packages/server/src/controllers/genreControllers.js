@@ -106,7 +106,7 @@ class GenreController {
           id
         },
         transaction: t,
-        cascade: true
+        // cascade: true
       });
       if(deletedGenre){
         res.send(res.statusCode);

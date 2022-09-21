@@ -17,11 +17,9 @@ module.exports = (sequelize, DataTypes) => {
   Requests_Books.init({
     request_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
     book_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
   }, {
     sequelize,

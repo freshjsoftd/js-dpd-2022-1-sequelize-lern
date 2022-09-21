@@ -1,12 +1,13 @@
 'use strict';
 
+const { shelves } = require('../../constants/library-db-constants')
 
-const shelves = [];
+/* const shelves = [];
 for(let i=0; i <20; i++){
   shelves.push({
         code: `Code # ${i+1}`,
     })
-} 
+}  */
 module.exports = {
   async up (queryInterface, Sequelize) {
    

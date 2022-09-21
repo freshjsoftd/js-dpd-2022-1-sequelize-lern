@@ -10,19 +10,23 @@ module.exports = {
       },
       request_id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        // allowNull: false,
         references: {
           model: 'Books',
           key: 'id'
-        }
+        },
+        onDelete: 'SET NULL',
+        onUpdate: 'CASCADE'
       },
       book_id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        // allowNull: false,
         references: {
           model: 'Requests',
           key: 'id'
-        }
+        },
+        onDelete: 'SET NULL',
+        onUpdate: 'CASCADE'
       },
       /* createdAt: {
         allowNull: false,

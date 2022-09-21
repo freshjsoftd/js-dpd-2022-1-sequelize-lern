@@ -16,11 +16,9 @@ module.exports = (sequelize, DataTypes) => {
   Athors_Books.init({
     author_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
     book_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
   }, {
     sequelize,

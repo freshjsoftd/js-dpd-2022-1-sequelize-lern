@@ -2,58 +2,86 @@ module.exports = {
 	genres: [
 		{
 			title: 'Criminal',
-			// created_at: new Date(),
-			// updated_at: new Date(),
 		},
 		{
 			title: 'Drama',
-			// created_at: new Date(),
-			// updated_at: new Date(),
 		},
 		{
 			title: 'Historical',
-			// created_at: new Date(),
-			// updated_at: new Date(),
 		},
 		{
 			title: 'Science Fiction',
-			// created_at: new Date(),
-			// updated_at: new Date(),
 		},
 		{
 			title: 'Fantazy',
-			// created_at: new Date(),
-			// updated_at: new Date(),
 		},
 		{
 			title: 'Romance',
-			// created_at: new Date(),
-			// updated_at: new Date(),
 		},
 		{
 			title: 'Biography',
-			// created_at: new Date(),
-			// updated_at: new Date(),
 		},
 		{
 			title: 'Adventures',
-			// created_at: new Date(),
-			// updated_at: new Date(),
 		},
 		{
 			title: 'Western',
-			// created_at: new Date(),
-			// updated_at: new Date(),
 		},
 		{
 			title: 'Fairy Tells',
-			// created_at: new Date(),
-			// updated_at: new Date(),
 		},
 		{
 			title: 'Miphology',
-			// created_at: new Date(),
-			// updated_at: new Date(),
+		},
+		{
+			title: 'Education',
+		},
+		{
+			title: 'Detective',
+		},
+		{
+			title: 'Comedy',
+		},
+		{
+			title: 'Classic',
 		},
 	],
+	shelves: [
+		{
+			code: 'Shelf #1',
+			description: 'Fantazy, Science Fiction'
+		},
+		{
+			code: 'Shelf #2',
+			description: 'Fairy Tells, Miphology'
+		},
+		{
+			code: 'Shelf #3',
+			description: 'Adventures, Western'
+		},
+		{
+			code: 'Shelf #4',
+			description: 'Biography, Historical'
+		},
+		{
+			code: 'Shelf #5',
+			description: 'Romance, Drama'
+		},
+		{
+			code: 'Shelf #6',
+			description: 'Criminal, Detective'
+		},
+		{
+			code: 'Shelf #7',
+			description: 'Comedy'
+		},
+		{
+			code: 'Shelf #8',
+			description: 'Classic'
+		},
+		{
+			code: 'Shelf #9',
+			description: 'Education'
+		},
+	]
 };

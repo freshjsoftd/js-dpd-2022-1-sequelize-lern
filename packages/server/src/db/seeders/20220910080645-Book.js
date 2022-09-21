@@ -5,8 +5,8 @@ const books = [];
 for(let i=1; i <10; i++){
   books.push({
         title: `Book ${i}`,
-        genre_id: 47 + Math.trunc(Math.random()*10),
-        shelf_id: 81 + Math.trunc(Math.random()*20),
+        genre_id: 1 + Math.trunc(Math.random()*14),
+        shelf_id: 1 + Math.trunc(Math.random()*8),
     })
 }
 module.exports = {
