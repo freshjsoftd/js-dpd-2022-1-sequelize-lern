@@ -7,9 +7,9 @@ POST http://localhost:5000/api/books HTTP/1.1
 content-type: application/json
 
 {
-  "title": "Voynich Manuscript",
+  "title": " oynich Manuscript",
   "description": "The most mysterious book in the whole world",
-  "genre_id": 11,
+  "genre_id": 17,
   "shelf_id": 2
 }
 
@@ -28,14 +28,14 @@ content-type: application/json
 
 ###
 
-PATCH http://localhost:5000/api/books/50 HTTP/1.1
+PATCH http://localhost:5000/api/books/7 HTTP/1.1
 content-type: application/json
 
 {
-  "title": "Tom Soyer",
+  "title": "om Soyer",
   "description": "Mark Twain's book",
-  "genre_id": 54,
-  "shelf_id": 88
+  "genre_id": 15,
+  "shelf_id": "dfdf"
 }
 
 ###
