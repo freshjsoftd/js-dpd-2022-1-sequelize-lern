@@ -1,4 +1,4 @@
-GET http://localhost:5000/api/books/52 HTTP/1.1
+GET http://localhost:5000/api/books?page=1&result=8 HTTP/1.1
 content-type: application/json
 
 ###

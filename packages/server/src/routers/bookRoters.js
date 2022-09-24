@@ -1,12 +1,12 @@
 import {Router} from 'express';
 // ======================
 import bookControllers from '../controllers/bookControllers';
-import {validate} from '../middleware';
+import {validate, pagination} from '../middleware';
 
 const booRouter = new Router();
 
 booRouter.route('/')
-.get(bookControllers.getBooks)
+.get(pagination.paginationBooks, bookControllers.getBooks)
 .post(validate.validateNewBook, bookControllers.createBook)
 .put(validate.validateNewBook, bookControllers.updateBook)
 

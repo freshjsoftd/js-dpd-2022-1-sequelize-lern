@@ -4,7 +4,11 @@ import { Book, sequelize } from '../db/models';
 class BookController {
 	async getBooks(req, res, next) {
 		try {
-			const allBooks = await Book.findAll({ raw: true });
+			const {limit, offset} = req.pagination;
+			const allBooks = await Book.findAll({ 
+				raw: true ,
+				limit,
+				offset});
 			if (allBooks) {
 				console.log(`Result is: ${JSON.stringify(allBooks, null, 2)}`);
 				res.status(200).json(allBooks);
