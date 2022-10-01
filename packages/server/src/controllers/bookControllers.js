@@ -134,6 +134,36 @@ class BookController {
 			next(error);
 		}
 	}
+
+	async addImage(req, res, next){
+		const t = await sequelize.transaction();
+		try {
+			const {
+				file: {filename},
+				params: {id}
+			} = req;
+			const [rowsCount, [updatedBook]] = await Book.update({image: filename},
+				{
+					where: {
+						id
+					},
+					raw: true,
+					returning: true,
+					transaction: t
+				})
+				if(rowsCount > 0){
+					console.log(updatedBook);
+					res.status(200).json(updatedBook)
+				}else{
+					next(createError(404, 'Book Not Found'))
+				}
+				t.commit()
+		} catch (error) {
+			console.log('Error is: ' + error.message);
+			t.rollback();
+			next(error);
+		}
+	}
 }
 
 export default new BookController();
