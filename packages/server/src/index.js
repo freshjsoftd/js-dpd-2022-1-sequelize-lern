@@ -1,22 +1,13 @@
-import express from 'express';
-import cors from 'cors';
+const http = require('http');
 require('dotenv').config();
 // ===========================
+const { app } = require('./app');
 const db = require('./db/models');
-import router from './routers';
-import { errorHandlers } from './middleware';
 
-const app = express();
 const PORT = process.env.PORT || 5000;
 const DB = process.env.DB_NAME
 
-app.use(express.json());
-app.use(cors());
-app.use('/api', router);
-app.use(errorHandlers.validationErrorHandler,
-				errorHandlers.sequelizeErrorHandler,
-				errorHandlers.errorHandler);
-
+const httpServer = http.createServer(app);
 
 const checkDB = async () => {
 	try {
@@ -29,7 +20,7 @@ const checkDB = async () => {
 
 checkDB();
 
-app.listen(PORT, () => console.log(`Server has been started at http://localhost:${PORT}`));
+httpServer.listen(PORT, () => console.log(`Server has been started at http://localhost:${PORT}`));
 	
 
 	

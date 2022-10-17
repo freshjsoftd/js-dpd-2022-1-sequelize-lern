@@ -1,4 +1,4 @@
-import * as Yup from 'yup';
+const Yup = require('yup');
 
 const TITLE_NAME_SCHEMA = Yup.string()
           .trim()
@@ -9,22 +9,22 @@ const SOME_ID_SCHEMA = Yup.number()
           .positive('This field must be positive')
           .integer('This field must be integer')
 
-export const NEW_BOOK_VALIDATION_SCHEMA = Yup.object().shape({
+module.exports.NEW_BOOK_VALIDATION_SCHEMA = Yup.object().shape({
   title: TITLE_NAME_SCHEMA.required(),
   genre_id: SOME_ID_SCHEMA,
   shelf_id: SOME_ID_SCHEMA
 })
-export const CHANGE_BOOK_VALIDATION_SCHEMA = Yup.object().shape({
+module.exports.CHANGE_BOOK_VALIDATION_SCHEMA = Yup.object().shape({
   title: TITLE_NAME_SCHEMA,
   genre_id: SOME_ID_SCHEMA,
   shelf_id: SOME_ID_SCHEMA
 })
 
-export const PAGINATION_SCHEMA = Yup.object().shape({
+module.exports.PAGINATION_SCHEMA = Yup.object().shape({
   limit: Yup.number().min(1).max(5).required(),
   offset: Yup.number().required()
 })
 
-export const NEW_GENRE_VALIDATION_SCHEMA = Yup.object().shape({
+module.exports.NEW_GENRE_VALIDATION_SCHEMA = Yup.object().shape({
   title: TITLE_NAME_SCHEMA.required()
 })

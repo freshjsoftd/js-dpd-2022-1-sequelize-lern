@@ -1,22 +1,22 @@
-import {Router} from 'express';
+const {Router} = require('express');
 // ======================
-import bookControllers from '../controllers/bookControllers';
-import {validate, pagination, upload} from '../middleware';
+const bookControllers = require('../controllers/bookControllers');
+const {validate, pagination, upload} = require('../middleware');
 
-const booRouter = new Router();
-
-booRouter.route('/')
+const bookRouter = new Router();
+clearImmediate
+bookRouter.route('/')
 .get(pagination.paginationBooks, bookControllers.getBooks)
 .post(validate.validateNewBook, bookControllers.createBook)
 .put(validate.validateNewBook, bookControllers.updateBook)
 
-booRouter.route('/:id')
+bookRouter.route('/:id')
 .get(bookControllers.getOneBook)
 .patch(validate.validateChangedBook, bookControllers.changeBook)
 .delete(bookControllers.deleteBook)
 
-booRouter.route('/:id/images')
+bookRouter.route('/:id/images')
 .patch(upload.uploadBookImage.single('bookImage'), bookControllers.addImage)
 
 
-export default booRouter;
+module.exports = bookRouter;

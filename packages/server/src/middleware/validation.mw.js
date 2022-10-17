@@ -1,9 +1,9 @@
-import createError from 'http-errors';
-import { NEW_BOOK_VALIDATION_SCHEMA,
+const createError = require ('http-errors');
+const { NEW_BOOK_VALIDATION_SCHEMA,
         CHANGE_BOOK_VALIDATION_SCHEMA,
-        NEW_GENRE_VALIDATION_SCHEMA } from "../utils/validationSchema";
+        NEW_GENRE_VALIDATION_SCHEMA } = require ("../utils/validationSchema");
 
-export const validateNewBook = async (req, res, next) => {
+module.exports.validateNewBook = async (req, res, next) => {
   const body = req.body;  
   try {
     await NEW_BOOK_VALIDATION_SCHEMA.validate(body, {abortEarly:false});
@@ -13,7 +13,7 @@ export const validateNewBook = async (req, res, next) => {
   }
 }
 
-export const validateChangedBook = async (req, res, next) =>{
+module.exports.validateChangedBook = async (req, res, next) =>{
   const body = req.body;
   if(await CHANGE_BOOK_VALIDATION_SCHEMA.isValid(body)){
     return next();
@@ -22,7 +22,7 @@ export const validateChangedBook = async (req, res, next) =>{
   next(createError(422, 'Unprocessable Entity'));
 }
 
-export const validateNewGenre = async (req, res, next) => {
+module.exports.validateNewGenre = async (req, res, next) => {
   const body = req.body;
   try {
     await NEW_GENRE_VALIDATION_SCHEMA.validate(body, {abortEarly:false});

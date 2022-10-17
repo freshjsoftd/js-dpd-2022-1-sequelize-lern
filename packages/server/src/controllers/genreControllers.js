@@ -1,6 +1,6 @@
-import createError from 'http-errors';
+const createError = require ('http-errors');
 
-import {Genre, sequelize} from '../db/models';
+const {Genre, sequelize} = require ('../db/models');
 
 class GenreController {
   async getGenres(req, res, next) {
@@ -120,9 +120,6 @@ class GenreController {
     }
   }
 
-
-
-
 }
 
-export default new GenreController();
+module.exports = new GenreController();

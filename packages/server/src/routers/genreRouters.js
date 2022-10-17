@@ -1,7 +1,7 @@
-import { Router } from 'express';
+const { Router } = require ('express');
 
-import genreCtrl from '../controllers/genreControllers';
-import {validate} from '../middleware';
+const genreCtrl = require ('../controllers/genreControllers');
+const {validate} = require ('../middleware');
 
 const genreRouter = new Router();
 
@@ -15,4 +15,4 @@ genreRouter.route('/:id')
 .patch(genreCtrl.changeGenre)
 .delete(genreCtrl.deleteGenre)
 
-export default genreRouter;
+module.exports = genreRouter;

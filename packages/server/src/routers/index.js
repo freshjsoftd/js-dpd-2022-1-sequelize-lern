@@ -1,6 +1,6 @@
-import { Router } from 'express';
-import bookRouter from './bookRoters';
-import genreRouter from './genreRouters';
+const { Router } = require('express');
+const bookRouter = require('./bookRouters');
+const genreRouter = require('./genreRouters');
 
 
 const router  = new Router();
@@ -8,4 +8,4 @@ const router  = new Router();
 router.use('/books', bookRouter);
 router.use('/genres', genreRouter);
 
-export default router;
+module.exports = router;

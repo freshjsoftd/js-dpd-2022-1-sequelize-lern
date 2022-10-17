@@ -1,4 +1,4 @@
-import {PAGINATION_SCHEMA} from '../utils/validationSchema';
+const {PAGINATION_SCHEMA} = require ('../utils/validationSchema');
 module.exports.paginationBooks = async (req, res, next) => {
   const {page, result} = req.query;
   console.log(page, result)

@@ -1,5 +1,5 @@
-import createError from 'http-errors';
-import { Book, sequelize } from '../db/models';
+const createError = require('http-errors');
+const { Book, sequelize } = require('../db/models');
 
 class BookController {
 	async getBooks(req, res, next) {
@@ -166,4 +166,4 @@ class BookController {
 	}
 }
 
-export default new BookController();
+module.exports =  new BookController();
